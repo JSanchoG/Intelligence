@@ -1,4 +1,9 @@
 //var date = new Date().toLocaleDateString("pl-PL");
+Date.prototype.addDays = function (days) {
+  const date = new Date(this.valueOf());
+  date.setDate(date.getDate() + days);
+  return date;
+};
 
 function getAppsTo() {
   $("#getAppsToID").hide()
@@ -73,9 +78,10 @@ function getAppsTo() {
           }
         }
       }
+      const sumbit_date = new Date('1899-12-30').addDays(appout.submit_date).toLocaleDateString("pl-PL");
       const newParag = document.createElement("p");
       newParag.classList.add('card-category');
-      newParag.innerHTML = "Application submitted at "+appout.submit_date+".";
+      newParag.innerHTML = "Application submitted at "+sumbit_date+".";
       const newDiv5 = document.createElement("div");
       newDiv5.classList.add('card-body');
       const form = document.createElement("form");
