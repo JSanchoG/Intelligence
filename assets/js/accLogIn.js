@@ -196,7 +196,7 @@ auth.onAuthStateChanged(function(user) {
     $(".admAcc-3").show();
     $(".admAcc_NOPERM").show();
   }
-  fetch('https://iq-project-131a3-default-rtdb.europe-west1.firebasedatabase.app/.json?download=iq-project-131a3-default-rtdb-export.json&format=export&print=pretty')
+  fetch('https://iq-project-131a3-default-rtdb.europe-west1.firebasedatabase.app/.json?download=iq-project-131a3-default-rtdb-export.json')
   .then(response =>
     response.json()
   )
