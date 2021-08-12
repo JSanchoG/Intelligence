@@ -78,10 +78,11 @@ function getAppsTo() {
           }
         }
       }
-      const sumbit_date = new Date('1899-12-30').addDays(appout.submit_date).toLocaleDateString("pl-PL");
+      const sumbit_date = new Date('1899-12-30').addDays(appout.submit_date);
+      var app_submit_date = sumbit_date.toLocaleDateString("pl-PL", { year: "numeric", month: "2-digit", day: "2-digit" });
       const newParag = document.createElement("p");
       newParag.classList.add('card-category');
-      newParag.innerHTML = "Application submitted at "+sumbit_date+".";
+      newParag.innerHTML = "Application submitted at "+app_submit_date+".";
       const newDiv5 = document.createElement("div");
       newDiv5.classList.add('card-body');
       const form = document.createElement("form");
